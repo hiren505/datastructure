@@ -63,32 +63,50 @@ void delete()
 {
 	int value;
 	int found = 0;
-	node *prev = head;
-	node *now = head;
+	
 
 	printf("\n\nEnter the value You want to delete : ");
 	scanf("%d",&value);
 
-	while(now->next != NULL)
+	if(head->data == value)
 	{
+		head = head->next;
+		free(head);
+		found = 1;
+		printf("\n\nValue Deleted Successfully\n\n");
+		return;
+	}
+	else
+	{
+		node *prev = head;
+		node *now = head;
+		while(now->next != NULL)
+		{
+			if(now->data == value)
+			{
+				prev->next = now->next;
+				found = 1;
+				free(now);
+				printf("\n\nValue Deleted Successfully\n\n");
+			}
+			prev = now;
+			now = now->next;
+		}
+
 		if(now->data == value)
 		{
-			prev->next = now->next;
+			prev->next = NULL;
 			free(now);
-			found = 1;
+			printf("\n\nValue Deleted Successfully\n\n");
+			return;
 		}
-		prev->next = now->next;
-		now = now->next;
 	}
 
 	if(found == 0)
 	{
 		printf("\n\nThe value Entered is not found in the list\n\n");
 	}
-	if(found == 1)
-	{
-		printf("\n\nValue Deleted Successfully\n\n");
-	}
+	return;
 }
 
 //Function to display the available options
