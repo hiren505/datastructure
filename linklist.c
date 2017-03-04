@@ -36,6 +36,10 @@ void append()
 
 void options()
 {
+	printf("\n\n\n0 : To quit");
+	printf("\n1: To add a node");
+	printf("\n2: To delete a node");
+	printf("\n3: To display the linked list\n\n");
 }
 
 void display()
@@ -54,6 +58,7 @@ int main()
 {
 	int choice;
 
+	options();
 	printf("\nEnter Your Choice : ");
 	scanf("%d",&choice);
 
@@ -72,6 +77,7 @@ int main()
 					break;
 			default: printf("\nThis coice is not present");
 		}
+		options();
 		printf("\n\nEnter Your Choice : ");
 		scanf("%d" , &choice);
 	}
