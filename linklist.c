@@ -6,7 +6,7 @@
 typedef struct link
 {
 	int data;
-	struct node * next;
+	struct link * next;
 }node;
 
 //Global Variables
