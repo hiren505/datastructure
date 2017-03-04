@@ -63,23 +63,24 @@ void delete()
 {
 	int value;
 	int found = 0;
-	
+	node *prev = head;
+	node *now = head;
 
 	printf("\n\nEnter the value You want to delete : ");
 	scanf("%d",&value);
 
 	if(head->data == value)
 	{
-		head = head->next;
+		node *new_head = head->next;
 		free(head);
+		head = new_head;
 		found = 1;
 		printf("\n\nValue Deleted Successfully\n\n");
 		return;
 	}
 	else
 	{
-		node *prev = head;
-		node *now = head;
+
 		while(now->next != NULL)
 		{
 			if(now->data == value)
