@@ -1,13 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int *head = NULL;
-int *tail = NULL;
 
-struct link
+
+typedef struct link
 {
 	int data;
 	struct node * next;
 }node;
+
+node *head = NULL;
+node *tail = NULL;
 
 void add()
 {
@@ -15,12 +18,12 @@ void add()
 	{
 		head = malloc(sizeof(node));
 		printf("\nEnter the Value :");
-		scanf("%d", head->data);
+		scanf("%d", &(head->data));
 		head->next = NULL;
 		tail = head;
 	}
 
-	
+
 
 
 }
@@ -49,6 +52,6 @@ int main()
 		scanf("%d" , &choice);
 	}
 
-	printf("\n\nThank You \n\n")
+	printf("\n\nThank You \n\n");
 
 }
