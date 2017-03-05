@@ -89,16 +89,22 @@ void delete()
 				found = 1;
 				free(now);
 				printf("\n\nValue Deleted Successfully\n\n");
+				return;
 			}
+			
 			prev = now;
 			now = now->next;
+			
 		}
 
 		if(now->data == value)
 		{
 			prev->next = NULL;
+			found = 1;
 			free(now);
 			printf("\n\nValue Deleted Successfully\n\n");
+			//Make sure you change tail when you delete last node of the list
+			tail = prev;										
 			return;
 		}
 	}
