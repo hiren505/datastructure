@@ -157,13 +157,17 @@ void add_at_particular_position()
 
 	while(now->next != NULL)
 	{
-		now = now->next;
+
 		if(now -> data == value)
 		{
 			newnode->next = now->next;
 			now->next = newnode;
 			printf("\n\nNew data added at the desired position\n\n");
 			return;
+		}
+		else
+		{
+			now = now->next;
 		}
 		
 	}
