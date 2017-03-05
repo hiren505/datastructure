@@ -123,13 +123,48 @@ void delete()
 	return;
 }
 
+//To add ata particular position
+void add_at_particular_position()
+{
+	int value;
+	int data;
+
+	if(head == NULL)
+	{
+		printf("\n\nNo nodes found in the Linked List \n\n");
+		return;
+	}
+
+	printf("\n\nEnter the New data You want to add to a linked list  : ");
+	scanf("%d" , &data);
+
+	printf("\n\nEnter the valu after which you want to add a node :");
+	scanf("%d",&value);
+
+	node * now = head;
+
+
+
+	if(head->data == value)
+	{
+		node *newnode = malloc(sizeof(node));
+		newnode->data = data;
+		newnode->next = head->next;
+		head->next = newnode;
+
+		printf("\n\nNew data added at the desired position\n\n");
+		return;
+	}
+}
+
 //Function to display the available options
 void options()
 {
 	printf("\n\n\n0 : To quit");
 	printf("\n1: To add a node");
 	printf("\n2: To delete a node");
-	printf("\n3: To display the linked list\n\n");
+	printf("\n3: To display the linked list");
+	printf("\n4: To add at a particular position\n\n");
 }
 
 //Main funcion
@@ -151,6 +186,8 @@ int main()
 			case 2: delete();
 					break;
 			case 3: display();
+					break;
+			case 4: add_at_particular_position();
 					break;
 			default: printf("\nThis coice is not present");
 		}
