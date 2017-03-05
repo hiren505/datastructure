@@ -66,8 +66,15 @@ void delete()
 	node *prev = head;
 	node *now = head;
 
+	if(now == NULL)
+	{
+		printf("\n\nThere are no Items on the list\n\n");
+		return;
+	}
+
 	printf("\n\nEnter the value You want to delete : ");
 	scanf("%d",&value);
+
 
 	if(head->data == value)
 	{
