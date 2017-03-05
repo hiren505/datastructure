@@ -143,18 +143,41 @@ void add_at_particular_position()
 
 	node * now = head;
 
-
+	node *newnode = malloc(sizeof(node));
+	newnode->data = data;
 
 	if(head->data == value)
 	{
-		node *newnode = malloc(sizeof(node));
-		newnode->data = data;
 		newnode->next = head->next;
 		head->next = newnode;
 
 		printf("\n\nNew data added at the desired position\n\n");
 		return;
 	}
+
+	while(now->next != NULL)
+	{
+		now = now->next;
+		if(now -> data == value)
+		{
+			newnode->next = now->next;
+			now->next = newnode;
+			printf("\n\nNew data added at the desired position\n\n");
+			return;
+		}
+		
+	}
+
+	if(now->data == value)
+	{
+		now->next = newnode;
+		newnode->next = NULL;
+		tail = newnode;
+		printf("\n\nNew data added at the desired position\n\n");
+		return;
+	}
+
+
 }
 
 //Function to display the available options
