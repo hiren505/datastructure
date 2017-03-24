@@ -1,19 +1,45 @@
+/*
+*  FILE          : linklist.c
+*  PROJECT       : Linked List
+*  PROGRAMMER    : Hirenkumar Tank
+*  FIRST VERSION : 4th march 2017
+*  DESCRIPTION   : I have developed a simple c code to perform the basic operations of a linked-list.
+*				   IT performs following basic operations 
+*				   1. Append: It takes the value from the user and stores it in a linked list.
+*				   2. delete: IT takes the value from the user which the user wants to delete. Then the value
+*					          is deleted from the linked list.
+*				   3. Add at a particular position : Here the user needs to enter the value after which the user
+*													 wants to add the new value. Once he gives the value and the 
+*													 value after which the user wants to add, the data is added
+*													 at that particular position.                  
+*/
+
+//********************************* Header Files ****************************************************************
+
 #include <stdio.h>
 #include <stdlib.h>
 
 
-//Structure defined
+//********************************* Structure defination *******************************************************
 typedef struct link
 {
 	int data;
 	struct link * next;
 }node;
 
-//Global Variables
+//********************************* Global Variables ***********************************************************
 node *head = NULL;
 node *tail = NULL;
 
-//Function to append a value to a linked list
+//********************************* Function Declarations ******************************************************
+
+
+//
+// FUNCTION      : append()
+// DESCRIPTION   : Appends the value at the end of the list. 
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 void append()
 {
 	if(head == NULL)
@@ -37,7 +63,12 @@ void append()
 }
 
 
-//To display a linked list
+//
+// FUNCTION      : display()
+// DESCRIPTION   : Displays all the values in the linked list
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 void display()
 {
 	node * current = head;
@@ -58,7 +89,12 @@ void display()
 	return;
 }
 
-//deletes a particular value
+//
+// FUNCTION      : delete()
+// DESCRIPTION   : Delets a particular value from the linked list
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 void delete()
 {
 	int value;
@@ -123,7 +159,12 @@ void delete()
 	return;
 }
 
-//To add ata particular position
+//
+// FUNCTION      : add_at_particular_position()
+// DESCRIPTION   : Adds the value at a particular position
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 void add_at_particular_position()
 {
 	int value;
@@ -184,7 +225,12 @@ void add_at_particular_position()
 
 }
 
-//Function to display the available options
+//
+// FUNCTION      : options()
+// DESCRIPTION   : Contains all the functions that a user can perform a linked list.
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 void options()
 {
 	printf("\n\n\n0 : To quit");
@@ -194,7 +240,12 @@ void options()
 	printf("\n4: To add at a particular position\n\n");
 }
 
-//Main funcion
+//
+// FUNCTION      : append()
+// DESCRIPTION   : Appends the value at the end of the list
+// PARAMETERS    : No parameters passsed.
+// RETURNS       : Does not return anything
+//
 int main()
 {
 	int choice;
